@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Head } from '@inertiajs/vue3';
+import { route } from "ziggy-js";
 import PlaceholderPattern from '@/components/PlaceholderPattern.vue';
 import AppLayout from '@/layouts/AppLayout.vue';
 import type { BreadcrumbItem } from '@/types';
@@ -7,13 +8,13 @@ import type { BreadcrumbItem } from '@/types';
 const breadcrumbs: BreadcrumbItem[] = [
     {
         title: 'Dashboard',
-        href: dashboard(),
+        href: route('dashboard'),
     },
 ];
 </script>
 
 <template>
-    <Head title="Dashboard" />
+  <Head title="Dashboard" />
 
     <AppLayout :breadcrumbs="breadcrumbs">
         <div
@@ -37,7 +38,7 @@ const breadcrumbs: BreadcrumbItem[] = [
                 </div>
             </div>
             <div
-                class="relative min-h-[100vh] flex-1 rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border"
+                class="relative min-h-screen flex-1 rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border"
             >
                 <PlaceholderPattern />
             </div>
