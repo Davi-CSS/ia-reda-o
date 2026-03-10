@@ -38,3 +38,6 @@ Route::match(['get','post'],'/', function (Request $request) {
     ]);
 
 });
+Route::get('/settings/appearance', function () {
+    return Inertia::render('settings/Appearance');
+})->name('appearance.edit');
